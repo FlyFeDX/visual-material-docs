@@ -5,10 +5,10 @@
 # 环境初始化
 
 ```yaml
-# 1. 下载本代码仓
+# 1. 下载代码仓
 git clone <git repo>
 
-# 2. 安装依赖(npm yarn pnpm)都可以
+# 2. 安装依赖(npm yarn pnpm)都可以，不可混用
 pnpm install
 
 # 3. 创建分支
@@ -338,6 +338,61 @@ export const materialInfo = {
 ### index.less
 
 > 样式文件
+
+### dataModel.json
+
+> 组件数据描述
+
+对于需要对接接口数据的组件,组件的数据描述必须提供.
+
+-   作用 1,描述组件所需的数据结构
+-   作用 2,使用数据集作为数据源时,作为数据映射关键文件.
+
+    ![image-20220422090639147](images/datamodel.png)
+
+## 组件说明文档
+
+> 组件说明文档,作为组件开发的重要交付物存在.
+
+```js
+   目录结构:
+    └── packages
+        └── compXXXX
+           └── doc
+              ├──images
+              └── README.md
+
+```
+
+1.  文档本地预览:
+
+        - 在 vscode 中预览,可以按需安装 md 预览插件.
+        - 在本地预览完整文档:
+
+            ```yaml
+            yarn build:doc
+
+            修改docs 文件夹下的  components.md 文件,增加新增加的组件文档路径.
+
+            npm i docsify-cli -g
+
+            docsify serve docs
+            ```
+
+            默认访问地址 http://localhost:3000
+
+        -
+
+2.  整体文档推送   
+     项目下的 docs 文件夹下的文件， 需要提交到
+
+        https://github.com/FlyFeDX/visual-material-docs
+
+        perssonal access token: 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
+
+3.  文档线上访问地址
+
+    https://flyfedx.github.io/visual-material-docs
 
 ## 组件注册
 
