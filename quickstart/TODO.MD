@@ -1,0 +1,3 @@
+-   [x] 开发文档
+-   [ ] oss-scripts 对静态资源的管理
+    -   publicPath
