@@ -24,4 +24,6 @@
 
 ### [TAB 列表](components/tab-list/README.md)
 
+### [视频播放](components/video-playback/README.md)
+
 持续完善中........

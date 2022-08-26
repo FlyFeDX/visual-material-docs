@@ -383,7 +383,7 @@ export const materialInfo = {
 
         -
 
-2.  整体文档推送   
+2.  整体文档推送  
      项目下的 docs 文件夹下的文件， 需要提交到
 
         https://github.com/FlyFeDX/visual-material-docs
