@@ -43,7 +43,7 @@ git checkout -b <feature-任务号> develop
         -   oss-material.json 物料描述文件
 ```
 
-### index.tsx
+### index.tsx ☆☆☆☆☆
 
 > 可以是 `index.js` , `index.jsx` 等，但是还是建议使用.tsx
 
@@ -105,7 +105,7 @@ const Comp: FC<IProps> = (props) => {
 };
 ```
 
-### schema.ts
+### schema.ts ☆☆☆☆☆
 
 schema 文件由三部分组成，分别为`schema`，`defaultValue`，`materialInfo`，缺一不可。
 
@@ -324,7 +324,7 @@ export const materialInfo = {
 };
 ```
 
-### oss-material.json
+### oss-material.json ☆☆☆☆☆
 
 ```json
 {
@@ -339,7 +339,7 @@ export const materialInfo = {
 
 > 样式文件
 
-### dataModel.json
+### dataModel.json ☆☆☆☆☆
 
 > 组件数据描述
 
@@ -350,7 +350,7 @@ export const materialInfo = {
 
     ![image-20220422090639147](images/datamodel.png)
 
-## 组件说明文档
+## 组件说明文档 ☆☆☆☆☆
 
 > 组件说明文档,作为组件开发的重要交付物存在.
 
@@ -394,7 +394,7 @@ export const materialInfo = {
 
     https://flyfedx.github.io/visual-material-docs
 
-## 组件注册
+## 组件注册到本地环境 ☆☆☆☆☆
 
 注册组件到本地 designer app，完成开发和联调。如下图所示：
 
@@ -437,17 +437,17 @@ yarn start
 yarn start:designer
 ```
 
-# 组件注册
+# 组件注册到开发服务器 ☆☆☆☆☆
 
-示意图如下：
+注册地址 10.10.2.8:9011 登录后选择 **可视化管理-->组件管理-->组件订阅** , 示意图如下：
 
-<img src="images/image-20220509104208990.png" alt="image-20220509104208990" style="zoom: 80%;" />
+![image-20220509104208990](images/image-20220509104208990.png)
 
 ## 重点说明
 
 -   组件名称 +　缩略图
 
-    <img src="images/image-20220509104528832.png" alt="image-20220509104528832" style="zoom: 67%;" />
+![image-20220509104208990](images/image-20220509104528832.png)
 
 -   组件文件路径
 
@@ -455,4 +455,4 @@ yarn start:designer
 
     组件目录：
 
-    <img src="images/image-20220509104823902.png" alt="image-20220509104823902" style="zoom: 50%;" />
+    ![image-20220509104208990](images/image-20220509104823902.png)
