@@ -2,6 +2,16 @@
 
 > oss-visual-material
 
+# 写在最前
+
+重点交付物:
+
+-   index.js/ index.jsx /index.tsx
+-   schema.ts
+-   oss-material.json
+-   组件说明文档 /doc
+-   代码提交前,需要注册到开发服务器
+
 # 环境初始化
 
 ```yaml
@@ -43,7 +53,7 @@ git checkout -b <feature-任务号> develop
         -   oss-material.json 物料描述文件
 ```
 
-### index.tsx ☆☆☆☆☆
+### index.tsx
 
 > 可以是 `index.js` , `index.jsx` 等，但是还是建议使用.tsx
 
@@ -105,7 +115,7 @@ const Comp: FC<IProps> = (props) => {
 };
 ```
 
-### schema.ts ☆☆☆☆☆
+### schema.ts
 
 schema 文件由三部分组成，分别为`schema`，`defaultValue`，`materialInfo`，缺一不可。
 
@@ -324,7 +334,7 @@ export const materialInfo = {
 };
 ```
 
-### oss-material.json ☆☆☆☆☆
+### oss-material.json
 
 ```json
 {
@@ -339,7 +349,7 @@ export const materialInfo = {
 
 > 样式文件
 
-### dataModel.json ☆☆☆☆☆
+### dataModel.json
 
 > 组件数据描述
 
@@ -350,7 +360,7 @@ export const materialInfo = {
 
     ![image-20220422090639147](images/datamodel.png)
 
-## 组件说明文档 ☆☆☆☆☆
+## 组件说明文档
 
 > 组件说明文档,作为组件开发的重要交付物存在.
 
@@ -381,20 +391,11 @@ export const materialInfo = {
 
             默认访问地址 http://localhost:3000
 
-        -
-
-2.  整体文档推送  
-     项目下的 docs 文件夹下的文件， 需要提交到
-
-        https://github.com/FlyFeDX/visual-material-docs
-
-        perssonal access token: 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
-
-3.  文档线上访问地址
+2.  文档线上访问地址
 
     https://flyfedx.github.io/visual-material-docs
 
-## 组件注册到本地环境 ☆☆☆☆☆
+## 组件注册
 
 注册组件到本地 designer app，完成开发和联调。如下图所示：
 
@@ -437,17 +438,17 @@ yarn start
 yarn start:designer
 ```
 
-# 组件注册到开发服务器 ☆☆☆☆☆
+# 组件注册
 
-注册地址 10.10.2.8:9011 登录后选择 **可视化管理-->组件管理-->组件订阅** , 示意图如下：
+示意图如下：
 
-![image-20220509104208990](images/image-20220509104208990.png)
+<img src="images/image-20220509104208990.png" alt="image-20220509104208990" style="zoom: 80%;" />
 
 ## 重点说明
 
 -   组件名称 +　缩略图
 
-![image-20220509104208990](images/image-20220509104528832.png)
+    <img src="images/image-20220509104528832.png" alt="image-20220509104528832" style="zoom: 67%;" />
 
 -   组件文件路径
 
@@ -455,4 +456,4 @@ yarn start:designer
 
     组件目录：
 
-    ![image-20220509104208990](images/image-20220509104823902.png)
+    <img src="images/image-20220509104823902.png" alt="image-20220509104823902" style="zoom: 50%;" />
