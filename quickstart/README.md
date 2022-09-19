@@ -362,34 +362,38 @@ export const materialInfo = {
 
 ## 组件说明文档
 
-> 组件说明文档,作为组件开发的重要交付物存在.
+> 组件说明文档,作为组件开发的重要交付物存在,在新增组件/修改了组件配置项/新增了组件能力的 情况下,组件说明文档都需同步修改.
 
 ```js
    目录结构:
     └── packages
         └── compXXXX
            └── doc
-              ├──images
-              └── README.md
+              ├──images 文档中引用的图片
+              └── README.md 文档正文
 
 ```
 
 1.  文档本地预览:
 
-        - 在 vscode 中预览,可以按需安装 md 预览插件.
-        - 在本地预览完整文档:
+           - 在 vscode 中预览,可以按需安装 md 预览插件.
+           - 在本地预览完整文档:
 
-            ```yaml
-            yarn build:doc
+               ```yaml
+               yarn build:doc
 
-            修改docs 文件夹下的  components.md 文件,增加新增加的组件文档路径.
+               修改docs 文件夹下的  _sidebar.md 文件,增加新增的组件文档路径.
 
-            npm i docsify-cli -g
+                -[{组件中文名}](./components/{组件文件夹名}/README.md)
+                样例:-[桑基图](./components/sankey/README.md)
 
-            docsify serve docs
-            ```
 
-            默认访问地址 http://localhost:3000
+               npm i docsify-cli -g
+
+               docsify serve docs
+               ```
+
+               默认访问地址 http://localhost:3000
 
 2.  说明文档必须包含的内容:组件具有的能力/配置方式/特殊说明的内容,需要图文结合
 
