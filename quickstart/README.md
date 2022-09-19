@@ -376,24 +376,24 @@ export const materialInfo = {
 
 1.  文档本地预览:
 
-           - 在 vscode 中预览,可以按需安装 md 预览插件.
-           - 在本地预览完整文档:
+    -   在 vscode 中预览,安装 md 预览插件,即可预览写好的 md 文档.
+    -   在本地预览完整文档:
 
-               ```yaml
-               yarn build:doc
+        -   修改 docs 文件夹下的 **\_sidebar.md**文件,增加新增的组件文档路径.
 
-               修改docs 文件夹下的  _sidebar.md 文件,增加新增的组件文档路径.
+            ![image-20220422090639147](images/image_20220919103102.png)
 
-                -[{组件中文名}](./components/{组件文件夹名}/README.md)
-                样例:-[桑基图](./components/sankey/README.md)
+        -   文档路径增加完成后,依次执行以下命令
 
+            ```yaml
+            yarn build:doc
 
-               npm i docsify-cli -g
+            npm i docsify-cli -g
 
-               docsify serve docs
-               ```
+            docsify serve docs
+            ```
 
-               默认访问地址 http://localhost:3000
+        -   默认访问地址 http://localhost:3000
 
 2.  说明文档必须包含的内容:组件具有的能力/配置方式/特殊说明的内容,需要图文结合
 
@@ -401,7 +401,7 @@ export const materialInfo = {
 
     https://flyfedx.github.io/visual-material-docs
 
-4.  图表类文档设计指引地址
+4.  图表类文档设计拓展阅读地址
 
     https://antv.antfin.com/zh-cn/vis/chart
 
