@@ -4,13 +4,13 @@
 
 # 写在最前
 
-重点交付物:
+组件开发重点交付物:
 
 -   index.js/ index.jsx /index.tsx
 -   schema.ts
 -   oss-material.json
 -   组件说明文档 /doc
--   代码提交前,需要注册到开发服务器
+-   代码提交前,需要注册到开发服务器,方法见下文.
 
 # 环境初始化
 
@@ -442,18 +442,26 @@ yarn start:designer
 
 示意图如下：
 
-<img src="images/image-20220509104208990.png" alt="image-20220509104208990" style="zoom: 80%;" />
+注册地址:http://10.10.2.8:9001/
+
+登录后,进入组件管理页面,路径 **可视化管理->组件管理**
+
+![参数值配置](images/image_16635514769304.png)
+
+组件订阅界面
+
+![参数值配置](images/image-20220509104208990.png)
 
 ## 重点说明
 
 -   组件名称 +　缩略图
 
-    <img src="images/image-20220509104528832.png" alt="image-20220509104528832" style="zoom: 67%;" />
+    ![参数值配置](images/image-20220509104528832.png)
 
--   组件文件路径
+*   组件文件路径
 
-    可视化组件服务地址：http://10.10.2.8:4011/static/material-components
+        可视化组件服务地址：http://10.10.2.8:4011/static/material-components
 
-    组件目录：
+        组件目录：
 
-    <img src="images/image-20220509104823902.png" alt="image-20220509104823902" style="zoom: 50%;" />
+    ![参数值配置](images/image-20220509104823902.png)

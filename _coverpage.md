@@ -46,7 +46,7 @@
     </div>
 </div>
 
-[组件说明](compdocs/README.md) [快速开始](quickstart/README.md)
+[组件说明](_componentspage.md) [快速开始](quickstart/README.md)
 
 <!-- 背景色 -->
 
