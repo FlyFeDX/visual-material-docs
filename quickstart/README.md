@@ -391,9 +391,15 @@ export const materialInfo = {
 
             默认访问地址 http://localhost:3000
 
-2.  文档线上访问地址
+2.  说明文档必须包含的内容:组件具有的能力/配置方式/特殊说明的内容,需要图文结合
+
+3.  文档线上访问地址
 
     https://flyfedx.github.io/visual-material-docs
+
+4.  图表类文档设计指引地址
+
+    https://antv.antfin.com/zh-cn/vis/chart
 
 ## 组件注册
 
