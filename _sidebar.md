@@ -29,3 +29,9 @@
     -   [TAB 列表](./components/tab-list/README.md)
 
     -   [桑基图](./components/sankey/README.md)
+
+    -   [日期选择](./components/range-picker/README.md)
+
+    -   [电表指标展示](./components/equip-list/README.md)
+
+    -   [百度地图](./components/baidu-map/README.md)

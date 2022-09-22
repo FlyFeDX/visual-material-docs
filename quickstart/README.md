@@ -83,6 +83,19 @@ interface IProps {
             parentZoneId: any; //
             userId: any; //
         };
+        // 可以用来缓存一些静态上下文的
+        cache: FieldCache;
+        // 系统内置的字段，用于组件事件派发
+        fieldName: Record<string, string>;
+        utils: {
+            // 系统打log的方案
+            logger: any;
+            // 系统内部有转化数据的逻辑，所以可能裁剪一部分数据
+            // 使用这个方法可以获取到原始数据
+            getDesignerOriginData: (data) => any;
+            // 遍历参数的方法 会自动注入一段当前时间的
+            eachRequestParams: (params: any, callback: any) => void;
+        };
     };
 
     /**
