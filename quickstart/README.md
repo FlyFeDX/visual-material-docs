@@ -60,6 +60,7 @@ git checkout -b <feature-任务号> develop
 文件内容描述（示例）:
 
 ```tsx | pure
+// 详细定义可以在 @fedex-vis/designer-types
 interface IProps {
     /**
      * 组件唯一id
@@ -382,7 +383,7 @@ export const materialInfo = {
     └── packages
         └── compXXXX
            └── doc
-              ├──images 文档中引用的图片
+              ├── images 文档中引用的图片
               └── README.md 文档正文
 
 ```
@@ -417,6 +418,28 @@ export const materialInfo = {
 4.  图表类文档设计拓展阅读地址
 
     https://antv.antfin.com/zh-cn/vis/chart
+
+5.  文档分组使用 frontmatter 进行管理，所以需要在文档头部定义组件名称、分组信息
+
+    ```md
+    ---
+    title: [组件名称]
+    group:
+        title: [分组名称]
+    ---
+
+    # [组件名称]
+
+    ## 简述
+
+    <!-- TODO -->
+
+    ## 配置项
+
+    <!-- TODO -->
+
+    ## 特殊说明
+    ```
 
 ## 组件注册
 
