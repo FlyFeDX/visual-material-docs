@@ -36,7 +36,24 @@ git checkout -b <feature-任务号> develop
 
 ## 一键创建组件命令
 
-`yarn create-material --dir [materialpath]`
+```yaml
+# 创建物料
+# 示例：yarn material:create --dir="xxxx-gis"
+# 释义：在packages目录下面创建oss-gis目录和其他组件文件(tsx,less等)
+yarn material:create --dir="路径"
+
+# 在某个路径下创建物料文档
+# 示例：yarn material:create --doc --dir="xxxx-gis"
+# 释义：在oss-gis目录下面创建doc目录和readme.md文件
+yarn material:create --doc --dir="路径"
+
+# 更新物料（维护版本信息、oss-material.json相关信息，自动创建、更新changelog，）
+# - 根据提示填写信息
+#   - 更新版本
+#   - 提交物料的更新信息
+#   - 提交本次commit的提交
+yarn material:update
+```
 
 ## 组件目录配置
 
@@ -463,6 +480,27 @@ export const materialInfo = {
     "schemaPath": "http://localhost:9900/static/material-components/border1/schema.js"  // 必填
 }
 ```
+
+# 组件打包
+
+> 输出单个组件包，用来上传到我们的系统中
+
+```bash
+# 执行下面的脚本，会把所有的组件分别打包出来，然后单独压缩
+yarn build:single-material
+
+# 输出指定类型的组件，不同组件之间用空格隔开
+# 指定输出oss-gis，baidu-map等两个物料，示例如下：
+yarn build:single-material oss-gis baid-map
+```
+
+执行过程示例如下图所示：
+
+![image-20221215194151718](./images/image-20221215194151718.png)
+
+组件包格式说明：
+
+![image-20221206144023401](./images/image-20221206144023401.png)
 
 # 组件测试
 
