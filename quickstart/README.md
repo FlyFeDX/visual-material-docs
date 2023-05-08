@@ -100,6 +100,12 @@ interface IProps {
             zoneId: any; //
             parentZoneId: any; //
             userId: any; //
+            /**
+             * userInfo 为登录用户信息，经过JSON.prase(userInfo),可得到object对象
+             * activeRoute为当前路由信息
+             * 应用样例：src\packages\alarm-window-card\index.jsx
+             */
+            currentLoginInfo: { userInfo: string; activeRoute: string };
         };
         // 可以用来缓存一些静态上下文的
         cache: FieldCache;
@@ -126,9 +132,40 @@ interface IProps {
     };
 
     /**
-     * 接收到的交互数据
+     * 系统注入到组件中的api
      */
-    interactionProps: any;
+    readonly api: {
+        /**
+         * 通用自定义接口，应用样例： src\packages\export-btn\index.tsx
+         */
+        customDataSourceApi: (
+            type: 'api' | 'dataset',
+            params: {
+                /**
+                 * extraConfig.responseType = blob  时，执行导出接口
+                 */
+                extraConfig: any;
+                [prop: string]: any;
+            },
+        ) => Promise<any>;
+
+        /**
+         * 系统中使用的请求
+         * 用来替代物料仓声明的api
+         */
+        request: (...args: any) => Promise<any>;
+    };
+
+    /**
+     * 自定义接口接收到的交互数据
+     */
+    interactionProps: {
+        /**自定义接口参数值，格式为{paramKey:paramValue}
+         * 应用样例： src\packages\export-btn\index.tsx
+         */
+        customDataSourceApiParams: any;
+        [prop: string]: any;
+    };
 
     /**
      * 右侧面板传入的配置数据
@@ -139,6 +176,12 @@ interface IProps {
      * 右侧数据面板配置后得到的请求返回的数据
      */
     dataSource: any;
+
+    /**
+     * 右侧配置自定义数据数据面板配置后得到的请求返回的数据
+     * 应用样例： src\packages\export-btn\index.tsx
+     */
+    customDataSourceApiConfig: any;
 }
 
 const Comp: FC<IProps> = (props) => {
@@ -372,9 +415,13 @@ export const materialInfo = {
     "version": "0.0.1",
     "main": "./index.js",
     "schema": "./schema.ts",
-    "dataModel": ""
+    "dataModel": "",
+    "groupId": 1,
+    "type": 1
 }
 ```
+
+**注意:groupId/type 必须为数字,否则组件无法注册到服务器.**
 
 ### index.less
 
@@ -458,7 +505,7 @@ export const materialInfo = {
     ## 特殊说明
     ```
 
-## 组件注册
+## 组件注册到本地
 
 注册组件到本地 designer app，完成开发和联调。如下图所示：
 
@@ -506,7 +553,7 @@ yarn build:single-material oss-gis baid-map
 
 ## 使用 designer 源码测试
 
-文件路径：.env.development
+文件路径 1：.env.development
 
 ![image-20220427172318590](images/dev-designer-code.png)
 
@@ -516,13 +563,20 @@ yarn build:single-material oss-gis baid-map
 
 ```yaml
 # 1. 启动组件开发服务
+
+## 1.1 组件访问路径为：http://localhost:4001/static/material-components/alarm-window-card/0.0.1/index.js，启动命令如下：
 yarn start
+
+##1.2 组件访问路径为：http://localhost:4001/static/material-components/alarm-window-card/index.js，启动命令如下：
+yarn start:noVersion
 
 # 2. 启动DesignerApp
 yarn start:designer
 ```
 
-# 组件注册
+# 组件注册到服务器
+
+## 组件管理 1.0 版本
 
 示意图如下：
 
@@ -536,7 +590,7 @@ yarn start:designer
 
 ![参数值配置](images/image-20220509104208990.png)
 
-## 重点说明
+### 重点说明
 
 -   组件名称 +　缩略图
 
@@ -549,3 +603,25 @@ yarn start:designer
         组件目录：
 
     ![参数值配置](images/image-20220509104823902.png)
+
+## 组件管理 2.0
+
+### 组件注册方式 1
+
+```yaml
+yarn build --URL=http://10.10.5.122:7008
+```
+
+打包过程中,调用组件注册接口,完成组件注册.其中 URL 为组件注册接口所在服务器地址. 注册完成的组件,在界面[可视化物料]下可见.
+
+该方式适用于自动化构建.
+
+注意:如果打包完成后,新增的可视化物料不可见,可在[可视化物料]界面,点击同步按钮,进行组件注册信息同步.
+
+![参数值配置](images/comp-sync.png)
+
+### 组件注册方式 2
+
+通过[可视化物料]界面,进行物料注册.该方式适用于组件手动打包部署过程,例如组件仓由第三方维护的情况.
+
+![参数值配置](images/comp-registe.png)
